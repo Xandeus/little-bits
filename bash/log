@@ -1,0 +1,46 @@
+#!/bin/bash
+DATE=`date +%Y-%m-%d`
+REVIEW="false"
+num_print=1
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -r|--review)
+    REVIEW="true"
+    shift # past argument
+    ;;
+    -n|--num_print)
+    num_print=$2
+    shift # past argument
+    shift # past argument
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+# System defined paths for note keeping
+if [ "$1" == "p" ]; then
+    LOG_DIR=$HOME_NOTES
+else
+    LOG_DIR=$WORK_NOTES
+fi
+cd $LOG_DIR
+if [ "$REVIEW" == "true" ]; then
+    # Print out most recent log file
+    newest_file=$(ls -At | head -n "$num_print") 
+    cat $newest_file
+else 
+    if [ ! -f "$DATE.txt" ]; then
+        echo "Creating log for $DATE!"
+        echo $DATE > $DATE.txt
+        cat TEMPLATE >> $DATE.txt
+    fi
+    vim $DATE.txt
+fi
+
