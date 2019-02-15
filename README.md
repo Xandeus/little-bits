@@ -9,14 +9,12 @@ Include programs and scripts created for school, work, or personal use.
 
 ---
 
-###### [Bash](https://github.com/Xandeus/tree/master/bash)
+###### [Bash](https://github.com/Xandeus/little-bits/tree/master/bash)
 
-###### [C](https://github.com/Xandeus/tree/master/C)
+###### [C](https://github.com/Xandeus/little-bits/tree/master/c)
 
-###### [Java](https://github.com/Xandeus/tree/master/java)
+###### [Java](https://github.com/Xandeus/little-bits/tree/master/java)
 
-###### [JavaScript](https://github.com/Xandeus/tree/master/javascript)
+###### [JavaScript](https://github.com/Xandeus/little-bits/tree/master/javascript)
 
-###### [Python](https://github.com/Xandeus/tree/master/python)
-
-
+###### [Python](https://github.com/Xandeus/little-bits/tree/master/python)
