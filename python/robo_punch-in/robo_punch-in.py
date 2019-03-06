@@ -18,7 +18,9 @@ if len(sys.argv) > 1 and (sys.argv[1] == "-c" or sys.argv[1] == "--config"):
     set_positions = True
 else:
     set_positions = False
-    print("Click anywhere to start.")
+    time_file = sys.argv[1]
+    print("Using file: %s" % time_file)
+    pyautogui.alert(text="Start entering time?")
     with open('text_input_positions.pkl', 'rb') as input:
         text_position_data = pickle.load(input)
 
@@ -27,7 +29,7 @@ dict_times = defaultdict(dict)
 
 
 def enter_schedule(input_field_position):
-    with open("spring_work-schedule", "r") as f:
+    with open(time_file, "r") as f:
         for line in f:
             clock_ins = line.split()
             dict_times[clock_ins[0]][clock_ins[1]] = clock_ins[2]
