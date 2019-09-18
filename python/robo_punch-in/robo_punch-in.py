@@ -20,7 +20,7 @@ else:
     set_positions = False
     time_file = sys.argv[1]
     print("Using file: %s" % time_file)
-    pyautogui.alert(text="Start entering time?")
+    print("Click on window to start")
     with open('text_input_positions.pkl', 'rb') as input:
         text_position_data = pickle.load(input)
 
